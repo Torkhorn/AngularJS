@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+
+<html lang="fr" ng-app="ToDo">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="./index.js"></script>
+        <title>Test d'Angular</title>
+    </head>
+
+    <body>
+        <div class="main" ng-controller="mainCtrl as main">
+        
+            <div class="col-md-3">
+                <h1>Saisissez votre prochaine tâche à effectuer</h1>
+                <input type="text" class="form-control" id="element" ng-model="main.newElement">
+                <button type="submit" class="btn btn-primary" ng-click="main.addElement(main.newElement)">Envoi</button>
+
+                <hr>
+
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="element in main.todoList">
+                        <input type="checkbox" class"form-check-input" ng-model="element.checked">{{element.value}}</li>
+                </ul>
+            </div>
+            
+        </div>
+    </body>
+
+</html>
